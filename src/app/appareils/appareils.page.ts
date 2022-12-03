@@ -17,7 +17,14 @@ export class AppareilsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.appareilsList = this.appareilsService.appareilsList.slice();
+    this.appareilsService.getAppareils().subscribe(
+      (res) => {
+        this.appareilsList = res;
+      },
+      (err) => {
+        console.log('error');
+      }
+    );
   }
 
   onLoadAppareil(appareil: { name: string; description: string[] }) {

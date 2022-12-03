@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Appareil } from '../models/appareil';
 
@@ -5,27 +6,10 @@ import { Appareil } from '../models/appareil';
   providedIn: 'root',
 })
 export class AppareilsService {
-  appareilsList: Appareil[] = [
-    {
-      name: 'Machine à laver',
-      description: [
-        'Volume: 6 litres',
-        'Temps de lavage: 2 heures',
-        'Consommation: 173 kWh/an',
-      ],
-      isOn: true,
-    },
-    {
-      name: 'Télévision',
-      description: ['Dimensions: 40 pouces', 'Consommation: 22 kWh/an'],
-      isOn: true,
-    },
-    {
-      name: 'Ordinateur',
-      description: ['Marque: fait maison', 'Consommation: 500 kWh/an'],
-      isOn: false,
-    },
-  ];
+  appareilsList!: Appareil[];
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  getAppareils() {
+    return this.http.get<Appareil[]>('assets/data/appareilsList.json');
+  }
 }
