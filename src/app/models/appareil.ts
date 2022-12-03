@@ -1,4 +1,5 @@
 export class Appareil {
+  id!: string;
   name: string;
   description!: string[];
   isOn: boolean;

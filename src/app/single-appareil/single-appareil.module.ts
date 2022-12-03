@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SingleAppareilPageRoutingModule } from './single-appareil-routing.module';
 
 import { SingleAppareilPage } from './single-appareil.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SingleAppareilPageRoutingModule
+    SingleAppareilPageRoutingModule,
+    SharedModule,
   ],
-  declarations: [SingleAppareilPage]
+  declarations: [SingleAppareilPage],
 })
 export class SingleAppareilPageModule {}

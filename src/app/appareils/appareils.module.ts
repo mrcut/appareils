@@ -8,6 +8,7 @@ import { AppareilsPageRoutingModule } from './appareils-routing.module';
 
 import { AppareilsPage } from './appareils.page';
 import { SharedModule } from '../shared/shared.module';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
+    IonicStorageModule,
     AppareilsPageRoutingModule,
   ],
   declarations: [AppareilsPage],

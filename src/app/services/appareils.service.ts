@@ -12,4 +12,10 @@ export class AppareilsService {
   getAppareils() {
     return this.http.get<Appareil[]>('assets/data/appareilsList.json');
   }
+
+  turnAllOn() {
+    for (let i = 0; i < Appareil.length; i++) {
+      // this.appareilsList[i].isOn = false;
+    }
+  }
 }
